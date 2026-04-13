@@ -1,11 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { MainLayout } from '@/components/layout/main_layout'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Calendar } from "@/components/ui/calendar"
 import { Users, CalendarCheck, UserPlus, TrendingUp } from "lucide-react"
 import React from 'react'
 
 import { EventCalender } from '@/components/ui/eventCalendar'
+import { RecentActivities } from '@/components/ui/recent-activies'
 
 export const Route = createFileRoute('/dashboard')({
   component: DashboardComponent,
@@ -46,7 +46,7 @@ function DashboardComponent() {
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">New Visitors</CardTitle>
+              <CardTitle className="text-sm font-medium text-muted-foreground">New Members</CardTitle>
               <UserPlus className="h-4 w-4 text-purple-500" />
             </CardHeader>
             <CardContent>
@@ -69,7 +69,7 @@ function DashboardComponent() {
         {/* Calendar and Recent Activity Section */}
         <div className="space-y-4">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-11">
-            <Card className="col-span-8 flex flex-col items-center justify-center p-4">
+            <Card className="col-span-8 flex flex-col items-center p-4">
               <CardHeader className="w-full text-left">
                 <CardTitle className="text-lg">Church Calendar</CardTitle>
               </CardHeader>
@@ -82,7 +82,7 @@ function DashboardComponent() {
                 <CardTitle className="text-lg">Recentzz Activity</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">Placeholder para sa Members table soon...</p>
+                <RecentActivities />
               </CardContent>
             </Card>
           </div>
