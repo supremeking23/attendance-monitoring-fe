@@ -5,6 +5,8 @@ import { Calendar } from "@/components/ui/calendar"
 import { Users, CalendarCheck, UserPlus, TrendingUp } from "lucide-react"
 import React from 'react'
 
+import { EventCalender } from '@/components/ui/eventCalendar'
+
 export const Route = createFileRoute('/dashboard')({
   component: DashboardComponent,
 })
@@ -65,29 +67,35 @@ function DashboardComponent() {
         </div>
 
         {/* Calendar and Recent Activity Section */}
-        <div className="grid gap-4 md:grid-cols-7 lg:grid-cols-7">
-          <Card className="col-span-4 p-4">
-            <CardHeader>
-              <CardTitle className="text-lg">Recent Activity</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">Placeholder para sa Members table soon...</p>
-            </CardContent>
-          </Card>
-          
-          <Card className="col-span-3 flex flex-col items-center justify-center p-4">
-            <CardHeader className="w-full text-left">
-              <CardTitle className="text-lg">Church Calendar</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Calendar
-                mode="single"
-                selected={date}
-                onSelect={setDate}
-                className="w-full flex justify-center items-center scale-110 lg:scale-125 transition-all"
-              />
-            </CardContent>
-          </Card>
+        <div className="space-y-4">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-11">
+            <Card className="col-span-8 flex flex-col items-center justify-center p-4">
+              <CardHeader className="w-full text-left">
+                <CardTitle className="text-lg">Church Calendar</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <EventCalender />
+              </CardContent>
+            </Card>
+            <Card className="col-span-3 p-4">
+              <CardHeader>
+                <CardTitle className="text-lg">Recentzz Activity</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Placeholder para sa Members table soon...</p>
+              </CardContent>
+            </Card>
+          </div>
+          {/* <div className="w-full">          
+            <Card className="col-span-3 flex flex-col items-center justify-center p-4">
+              <CardHeader className="w-full text-left">
+                <CardTitle className="text-lg">Church Calendar</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <EventCalender />
+              </CardContent>
+            </Card>
+          </div> */}
         </div>
       </div>
     </MainLayout>
