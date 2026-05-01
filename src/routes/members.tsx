@@ -4,9 +4,11 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { MemberTable } from '@/components/members/member-table'
 import { TablePagination } from '@/components/ui/table-pagination'
-import { UserPlus, Search, Filter } from 'lucide-react'
+import {AddMembersForm} from '@/components/ui/add-members-form'
+import { Search, Filter } from 'lucide-react'
 
 import React from 'react'
+
 
 export const Route = createFileRoute('/members')({
   component: MembersComponent,
@@ -41,6 +43,8 @@ function MembersComponent() {
   // 4. Slice the data: Ito ang i-lo-loop natin sa TableBody
   const currentData = MOCK_MEMBERS.slice(startIndex, endIndex)
 
+ 
+
   return (
     <MainLayout>
 
@@ -63,10 +67,7 @@ function MembersComponent() {
             <h1 className="text-3xl font-bold tracking-tight">Members Directory</h1>
             <p className="text-muted-foreground text-sm">Manage and view all registered church members.</p>
           </div>
-          <Button className="flex items-center gap-2">
-            <UserPlus className="h-4 w-4" />
-            Add Member
-          </Button>
+          <AddMembersForm />
         </div>
 
         <div className="rounded-md border bg-white">
