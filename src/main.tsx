@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import ReactDOM  from 'react-dom/client'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
+import { Toaster } from "@/components/ui/sonner"
 import './index.css'
 
 
@@ -23,6 +24,8 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement)
   root.render(
     <StrictMode>
+      {/* Richcolor for green success/ red errors */}
+      <Toaster position="top-right" richColors />
       <RouterProvider router={router} />
     </StrictMode>,
   )
